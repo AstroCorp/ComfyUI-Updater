@@ -19,7 +19,7 @@ Script to update ComfyUI portable on Windows and migrate desired directories fro
    ```
 3. Enter the target version and your current ComfyUI path when prompted.
 
-The script will validate your input, download the specified version, and automatically move models and output files.
+The script will validate your input, download the specified version, and automatically move models and output files. Additionally, it will create hard links to the `output` and `models` directories, ensuring that your data remains accessible. The script also installs `ComfyUI-Manager` to enhance your workflow.
 
 ---
 
