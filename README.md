@@ -2,7 +2,8 @@
 
 Script to update ComfyUI portable on Windows and migrate desired directories from previous version.
 
-> **Warning:** This is a personal script. If you need to modify it, feel free to create a fork and adapt it to your needs.
+> [!WARNING]
+> This is a personal script. If you need to modify it, feel free to create a fork and adapt it to your needs.
 
 ## Requirements
 
