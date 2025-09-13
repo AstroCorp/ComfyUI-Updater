@@ -73,11 +73,13 @@ MODELS_DIRS=("checkpoints" "controlnet" "inpaint" "loras" "upscale_models")
 
 for model_dir in "${MODELS_DIRS[@]}"; do
 	if [ -d "$COMFYUI_PATH/ComfyUI/models/$model_dir" ]; then
-		echo -e "${COLOR_YELLOW}Preparing to move $model_dir...${COLOR_DEFAULT}"
+		echo -e "${COLOR_BLUE}Preparing to move $model_dir...${COLOR_DEFAULT}"
  		rm -rf "$COMFY_UPDATING_PATH/ComfyUI/models/$model_dir"
 
-		echo -e "${COLOR_YELLOW}Moving $model_dir...${COLOR_DEFAULT}"
+		echo -e "${COLOR_BLUE}Moving $model_dir...${COLOR_DEFAULT}"
  		mv "$COMFYUI_PATH/ComfyUI/models/$model_dir" "$COMFY_UPDATING_PATH/ComfyUI/models/"
+	else
+		echo -e "${COLOR_YELLOW}Directory '$model_dir' does not exist in source. Skipping...${COLOR_DEFAULT}"
 	fi
 done
 
@@ -99,7 +101,7 @@ for item in "$COMFY_UPDATING_PATH"/*; do
 	target="$COMFYUI_PATH/$name"
 
 	if [ -e "$target" ]; then
-		echo -e "${COLOR_YELLOW}Removing $target...${COLOR_DEFAULT}"
+		echo -e "${COLOR_BLUE}Removing $target...${COLOR_DEFAULT}"
 		rm -rf "$target"
 	fi
 
