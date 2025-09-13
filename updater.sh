@@ -112,4 +112,15 @@ done
 echo -e "${COLOR_BLUE}Removing $UPDATING_PATH...${COLOR_DEFAULT}"
 rm -rf "$UPDATING_PATH"
 
+# Create hard links for models and output
+if [ ! -e "$COMFYUI_PATH/models" ]; then
+	echo -e "${COLOR_BLUE}Creating hard link for models...${COLOR_YELLOW}"
+	cmd //c "cd $COMFYUI_PATH && mklink /D models .\ComfyUI\models"
+fi
+
+if [ ! -e "$COMFYUI_PATH/output" ]; then
+	echo -e "${COLOR_BLUE}Creating hard link for output...${COLOR_YELLOW}"
+	cmd //c "cd $COMFYUI_PATH && mklink /D output .\ComfyUI\output"
+fi
+
 echo -e "${COLOR_GREEN}Update to version $COMFYUI_VERSION completed successfully!${COLOR_DEFAULT}"
