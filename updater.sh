@@ -6,6 +6,9 @@ COLOR_YELLOW='\033[0;33m'
 COLOR_BLUE='\033[0;34m'
 COLOR_DEFAULT='\033[0m'
 
+# Stop script on Ctrl+C
+trap 'echo -e "${COLOR_RED}\nProcess stopped by user.${COLOR_DEFAULT}"; exit 130' SIGINT
+
 read -p "Target version (example: 0.3.59): " COMFYUI_VERSION
 read -p "Current ComfyUI path (example: C:/Users/your_user/Documents/ComfyUI_windows_portable): " COMFYUI_PATH
 
