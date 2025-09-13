@@ -1,5 +1,9 @@
 # ComfyUI Updater
 
+Script to update ComfyUI portable on Windows and migrate desired directories from previous version.
+
+> **Warning:** This is a personal script. If you need to modify it, feel free to create a fork and adapt it to your needs.
+
 ## Requirements
 
 - A terminal compatible with Bash (e.g., Git Bash, WSL, or similar).
