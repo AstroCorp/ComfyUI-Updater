@@ -9,7 +9,7 @@ COLOR_DEFAULT='\033[0m'
 # Stop script on Ctrl+C
 trap 'echo -e "${COLOR_RED}\nProcess stopped by user.${COLOR_DEFAULT}"; exit 130' SIGINT
 
-read -p "Target version (example: 0.3.59): " COMFYUI_VERSION
+read -p "Target version (example: 0.4.0): " COMFYUI_VERSION
 read -p "Current ComfyUI path (example: C:/Users/your_user/Documents/ComfyUI_windows_portable): " COMFYUI_PATH
 
 # Validate version (not empty or only spaces)
@@ -69,7 +69,7 @@ echo -e "${COLOR_BLUE}Extracting...${COLOR_YELLOW}"
 7z x "$DOWNLOAD_FILE" -o"$UPDATING_PATH"
 
 # Move directories from ../ComfyUI/models to ../updating/ComfyUI_windows_portable/ComfyUI/models
-MODELS_DIRS=("checkpoints" "controlnet" "inpaint" "loras" "upscale_models")
+MODELS_DIRS=("checkpoints" "controlnet" "diffusion_models" "embeddings" "inpaint" "loras" "text_encoders" "upscale_models" "vae")
 
 for model_dir in "${MODELS_DIRS[@]}"; do
 	if [ -d "$COMFYUI_PATH/ComfyUI/models/$model_dir" ]; then
